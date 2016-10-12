@@ -88,7 +88,7 @@
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
       <p data-config-presenter><!-- populated from slide_config.json --></p>
-            <p style="margin-top: 6px; margin-left: -2px;">Last edited: 2016-10-12 14:53</p>
+            <p style="margin-top: 6px; margin-left: -2px;">Last edited: 2016-10-12 17:09</p>
           </hgroup>
   </slide>
 
@@ -374,135 +374,7 @@ Diff
 <li>More than one will enter in each of the first two minutes.</li>
 </ol>
 
-<p>Why and why not might a Poisson process model be suitable here?</p>
-
-</article></slide><slide class=''><hgroup><h2>continuous random variables</h2></hgroup><article  id="continuous-random-variables">
-
-<p>Most discrete random variables arise out of <em>counting things</em>. Sometimes it&#39;s just more natural for a random variable to take on &quot;any&quot; real value, such as when we&#39;re <em>measuring things</em>.</p>
-
-<p>Let \(X\) be such a random variable. Main focus as always is on <em>distribution</em>, i.e. the collection of \(P(X \in A)\) for \(A \subset \mathbb{R}\). Let&#39;s just worry about intervals and consider things like:</p>
-
-<p>\[P(X \in (a,b]) = P(a &lt; X \le b) = F(b) - F(a).\]</p>
-
-<p>If there is a (&quot;piecewise&quot;) continuous function \(f\) such that:</p>
-
-<p>\[P(a &lt; X \le b) = F(b) - F(a) = \int_a^b f(x)\,dx\] when we say \(X\) is &quot;(absolutely) continuous&quot; and has \(f\) as its <em>probability density function</em> (or pdf, or just density).</p>
-
-</article></slide><slide class=''><hgroup><h2>density functions, meanings, consequences - I</h2></hgroup><article  id="density-functions-meanings-consequences---i" class="build">
-
-<p>Theorem: A pdf completely characterizes a distribution.</p>
-
-<p>Proof: &#8230;</p>
-
-<p>Some corrolaries: the cdf \(F\) is continuous, \(f \ge 0\), and \(\int_{-\infty}^\infty f(x)\,dx = 1\).</p>
-
-<p>Advice: <em>Always</em> think of a density as living inside its integral.</p>
-
-<p>Heuristic meaning of \(f(x)\) can be:</p>
-
-<p>\[f(x)\Delta{x} \approx \int_x^{x+\Delta{x}}f(x)\,dx = P(X \in (x, x+\Delta x])\].</p>
-
-</article></slide><slide class=''><hgroup><h2>density functions, meanings, consequences - II</h2></hgroup><article  id="density-functions-meanings-consequences---ii">
-
-<p>If \(X\) is continuous, then for all \(a \in \mathbb{R}\):</p>
-
-<p>\[P(X = a) = P(X \in (a, a]) = \int_a^a f(x)\,dx = 0\]</p>
-
-<p>Recall from the beginning &quot;pick a random number in (0,1)&quot; and its associated oddities.</p>
-
-</article></slide><slide class=''><hgroup><h2>example</h2></hgroup><article  id="example">
-
-<p>Pick a number &quot;uniformly&quot; from \((0,1)\) and let \(X\) simply be that number. We have:</p>
-
-<p>\[F(x) = P(X \le x) = \begin{cases}
-0 &amp;: x &lt; 0\\
-x &amp;: 0 \le x &lt; 1\\
-1 &amp;: x \ge 1\end{cases}\]</p>
-
-<p>To find the density, just differentiate:</p>
-
-<p>\[f(x) = F&#39;(x) = \begin{cases}
-1 &amp;: 0 \le x &lt; 1\\
-0 &amp;: \text{otherwise}\end{cases}\]</p>
-
-<p>The endpoints don&#39;t matter. We say \(X\) has a uniform distribution with parameters 0 and 1, or \(X\sim\text{Uniform}[0,1]\).</p>
-
-</article></slide><slide class=''><hgroup><h2>the \(\text{Uniform}[a,b]\) distributions</h2></hgroup><article  id="the-textuniformab-distributions">
-
-<p>Nothing special about 0 and 1. Pick a number between \(a\) and \(b\) and call it \(X\). The density and cdf will be:</p>
-
-<p>\[f(x) = \begin{cases}
-\frac{1}{b-a} &amp;: x \in [a,b]\\
-0 &amp;: \text{otherwise};\end{cases}\] \[F(x) = \begin{cases}
-0 &amp;: x &lt; a\\
-\frac{x-a}{b-a} &amp;: x \in [a,b]\\
-1 &amp;: x &gt; b.\end{cases}\]</p>
-
-</article></slide><slide class=''><hgroup><h2>time to first event of a Poisson process</h2></hgroup><article  id="time-to-first-event-of-a-poisson-process">
-
-<p>Let&#39;s say we have a Poisson process \(N(t)\) with rate \(\lambda\). The time of the first event is random. Call this time \(X\).</p>
-
-<p>What can we say about \(X\)? Can we completely describe its distribution? Yes!</p>
-
-<p>We can show:</p>
-
-<p>\[F(x) = P(X \le x) = \begin{cases}
-1 - e^{-\lambda x} &amp;: x &gt; 0\\
-0 &amp;: \text{otherwise}\end{cases}.\] So the density is: \[f(x) = F&#39;(x) = \begin{cases}
-\lambda e^{-\lambda x} &amp;: x &gt; 0\\
-0 &amp;: \text{otherwise}.
-\end{cases}\]</p>
-
-</article></slide><slide class=''><hgroup><h2>the exponential distributions</h2></hgroup><article  id="the-exponential-distributions">
-
-<p>In this case we say \(X\) has an exponential distribution with (rate) parameter \(\lambda\), or \(X \sim\text{Exp}(\lambda)\).</p>
-
-<p>Free picture for Exp\((1)\) density:</p>
-
-<p><img src="data:image/png;base64,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u1EY2luzLeGjywv0XZxH0N8QBRfztxBo4G4DJ1zYjwQamNQkMf+7uV+Gmwg0EGHuog+m19c8+Ks49AFf8/PTaxdC3/naAM2auspvi5BAAxTVdKAvCTSQIzzQfQk0kEOgAYoSaICiBBqgqLxA24sDWIiwQG9eXDRnNzugXVGB/vnp4rLmfvv1CzQQJCnQVz9Rpddnxgo0ECQp0Nc/k/Brn0MINJAjKdA+1RtYlKBA76bLl5/gvem3xiHQQI6gQO9my5fLGVt7cQCtWlygAXIMV9BjA4c+4KNhljgAcgxX0GMDhz7gkwHeJOwjdzkkduSxA88deezAc0c+88CnvszuclY9kNgTIHfksQPPHXnswHNH3mygr96o0vNWwh5iT4DckccOPHfksQPPHXmzgT4U+dy776M9W+wJkDvy2IHnjjx24LkjbzfQp1vZHYy2AP0w++t4h9iRxw48d+SxA88decuBfrhzu9E+Yk+A3JHHDjx35LEDzx1544GeTOwJkDvy2IHnjjx24LkjF+hhxJ4AuSOPHXjuyGMHnjtygR5G7AmQO/LYgeeOPHbguSMX6GHEngC5I48deO7IYweeO3KBHkbsCZA78tiB5448duC5IxfoYcSeALkjjx147shjB547coEeRuwJkDvy2IHnjjx24LkjF+hhxJ4AuSOPHXjuyGMHnjtygR5G7AmQO/LYgeeOPHbguSMX6GHEngC5I48deO7IYweeO3KBHkbsCZA78tiB5448duC5IxfoYcSeALkjjx147shjB547coEeRuwJkDvy2IHnjjx24LkjF2gArhFogKIEGqAogQYoSqABihJogKIEGqAogQYoSqABihJogKIEGqAogQYoSqABihJogKIEGqAogQYoSqABihJogKIEGqAogQYoSqABihJogKIEGqAogQYoSqABihJogKIEGqCoNgL968tq5/Pcw3ijX1/e/zP3GHr7+al7yd99n3sc/R1Gnnqy7Eb/de4x9PT72+pJ2ti3c4+6iUCvj//rJ+Zif/7GBfrwE7GTNvTnWqS1Yq974dMG/nyypI398LN81rO8hUBvVqm12Fvnjfv0Wy5r7Mmzuc46cNzbVehr/tTn1erDj5nG0ECgu5exe/268+Dj3IPpbV+MrMgdfiTu1wjWaa/548i7HzGzfdO93TYucg/71zxtyHtP58jT6T6DBgK9fmzErtRxixyHH9JhgT75PXuTNfjdj8PjKbL7GuJOluNvLmm1W0edIs82Tz/Dt/P9NM8P9O6kffzff5P23s/+G+5f49agt8/T5u4XgKBg7H4ePo48cF7XvVvxX3HD3o068HeV0x/mp/86tfxAn3zP7f4161Tofnf6mvcm4ekPwnVcMI4CB979TMn7ubKbhUStgj06CcuM8gN9Uou41G26UyBu1GfWgSsFnZNfvFLsivE5cOK/+33r6/5XxbATZVvi9/EmAv14xs74m8gdogO9+87L+qXlaJO3lntYKsgL9Gb17t/mvhbiLfav9OGqH9dB3+H0V9XI6Vx0oOOW/TvrvCu+Hh5P7rxAP96lkFbo7vV+vILXddBvdxplgZ5Y3Kr/XmSgj79xxwW6m4Meviu3WTdw7mLyn/Nf7d9aoMPO3k5woHd9Dhz6480qUT9aHteS4gJ9cj1j1OlyOEv2r/mcd1i0Fmgz6Altsy6CPtO9bVXgTfqbPV5MHBfoU0kTqH2gjxP+Ge+wEOjZxQY6uc9pd6o8dTk60FHvWKxPfsea7ydLfqBdxTGTddgiwUtJtXi+Jjc60DWuXLvR+mSw8w08P9Db4Oug92JHHbVEcCmpFs/7gR3EDPxc0kt+9gNcoN8u+U7CvchAd3uI5HyvXZVUi0YCHTX9P9nQQKDvkLwXx15ioBP3peqk3qQeHOjzO32DzprTa06sQd8heje7h8hAZ73BduLkmy7qmq9nUZPQzsnrvM1aFXsKy5znSgOBzt4POjHQYVvYnehG/nS5WtI89ElcoM9e8qgf649hmfUOmwYCnf6JKnmB3p7/vp0UjJMPyYj8aZ4X6LOXPOtH4snCkk9UuYfPJJzU6cdGpQX65NO6IvscGOiTQqeN/GkmMt+1B00EOvtTveMCffqJhIHfdodeBF7usxcY6MfQJf5EXM/9i3kbgQZokEADFCXQAEUJNEBRAg1QlEADFCXQAEUJNEBRAg1QlEADFCXQAEUJNEBRAg1QlEADFCXQAEUJNEBRAg1QlEADFCXQAEUJNEBRAg1QlEADFCXQAEUJNEBRAg1QlEADFCXQAEUJNEBRAg1QlEADFCXQAEUJNEBRAg1QlEADFCXQAEUJNEBRAg1QlEADFCXQAEUJNEBRAg1QlEADFCXQAEUJNEBRAg1QlEADFCXQAEUJNEBRAg1QlEADFCXQAEUJNEBRAg1QlEADFCXQAEUJNEBRAg1QlEADFCXQAEUJNEBRAs2S/Py0ev9P9y+/v63efZ97NPAXAs2ibFarz6f/hMoEmkU5zpx/fVl9+DH3WOBvBJpl2a5WHx8e1hY4SCDQLEzX5kOloTqBZmF+fVn967fjW4VQm0CzNJvVzte5RwE3EGiW5vc3CxyEEGgWZy3QhBBolmZriYMUAs3C/P62+pd/dxU0EQSahdnsps9b9xESQaBZlp+fdrNnO3GQQaBZlsM9hLtMe5+Q+gSaRXm8h3DtfUICCDRL8vvxHkK7JZFAoFmS511G7TdKAIEGKEqgAYoSaICiBBqgKIEGKEqgAYoSaICiBBqgKIEGKEqgAYoSaICiBBqgKIEGKEqgAYoSaICiBBqgKIEGKEqgAYoSaICiBBqgKIEGKEqgAYoSaICiBBqgKIEGKEqgAYoSaICiBBqgKIEGKEqgAYoSaICiBBqgKIEGKEqgAYoSaICiBBqgKIEGKEqgAYoSaICiBBqgKIEGKEqgAYoSaICiBBqgKIEGKEqgAYoSaICiBBqgKIEGKOr/A+C8NzP0LNlRAAAAAElFTkSuQmCC" width="720" style="display: block; margin: auto;" /></p>
-
-</article></slide><slide class=''><hgroup><h2>what should we expect of a Poisson waiting time?</h2></hgroup><article  id="what-should-we-expect-of-a-poisson-waiting-time" class="build">
-
-<p>The Poisson process is the continuous time analogy of the Bernoulli process. Both &quot;completely random&quot;.</p>
-
-<p>It turns out the exponential distributions are also &quot;memoryless&quot;, and the proof is pretty much the same.</p>
-
-<p>Theorem: what I just wrote.</p>
-
-<p>Proof: &#8230;</p>
-
-<p>Not only that, but exponential distributions are the <em>only</em> memoryless continuous distributions.</p>
-
-<p>Theorem: what I just wrote.</p>
-
-<p>Proof: &#8230;</p>
-
-</article></slide><slide class=''><hgroup><h2>the hazard function - I</h2></hgroup><article  id="the-hazard-function---i">
-
-<p>We&#39;re always concerned with characterizing distributions. So far we can do this with these functions:</p>
-
-<ul>
-<li>cdf \(F(x) = P(X \le x)\) (always)</li>
-<li>pmf \(p(x) = P(X = x)\) (\(X\) discrete only)</li>
-<li>pdf \(f(x) = F&#39;(x)\) (\(X\) continuous only)</li>
-<li>&quot;survival&quot;/&quot;reliability&quot; function \(S(x) = R(x) = P(X &gt; x) = 1 - P(X \le x) = F(x)\)</li>
-</ul>
-
-<p>Let&#39;s add another, based on the idea of &quot;instantaneous probability of occurence&quot;.</p>
-
-<p>Think in terms of a random variable \(X\) that measures a time-to-event, and let&#39;s say the event <em>did not happen</em> by time \(x\). What&#39;s the chance the event then happens &quot;right away&quot;?</p>
-
-</article></slide><slide class=''><hgroup><h2>the hazard function - II</h2></hgroup><article  id="the-hazard-function---ii">
-
-<p>If \(X\) is a continuous random variable taking on only positive values, with pdf \(f\) and survival function \(S(x) = 1-F(x)\), its <em>hazard function</em> \(h\) is defined as:</p>
-
-<p>\[h(x) = \frac{f(x)}{S(x)}\]</p>
-
-<p>As a key example, consider \(X \sim \text{Exponential}(\lambda)\).</p>
-
-<p>\(X\) is &quot;memoryless&quot;. What, then, ought to happen with its hazard function?</p>
-
-</article></slide><slide class=''><hgroup><h2></h2></hgroup><article  id="section"></article></slide>
+<p>Why and why not might a Poisson process model be suitable here?</p></article></slide>
 
 
   <slide class="backdrop"></slide>
