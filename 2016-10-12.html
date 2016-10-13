@@ -88,7 +88,7 @@
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
       <p data-config-presenter><!-- populated from slide_config.json --></p>
-            <p style="margin-top: 6px; margin-left: -2px;">Last edited: 2016-10-12 17:09</p>
+            <p style="margin-top: 6px; margin-left: -2px;">Last edited: 2016-10-13 13:15</p>
           </hgroup>
   </slide>
 
@@ -122,7 +122,7 @@
 
 <p>Let \(Y\sim\text{Poisson}(\lambda(t-s))\). The above implies more:</p>
 
-<p>\[\lim_{n \to \infty} P(X_n \in A) = P(Y \in A),\] for \(A \in \mathbb{R}\). So the &quot;distributions&quot; converge.</p>
+<p>\[\lim_{n \to \infty} P(X_n \in A) = P(Y \in A),\] for \(A \subset \mathbb{R}\). So the &quot;distributions&quot; converge.</p>
 
 </article></slide><slide class=''><hgroup><h2>more on the limit result</h2></hgroup><article  id="more-on-the-limit-result">
 
@@ -374,7 +374,36 @@ Diff
 <li>More than one will enter in each of the first two minutes.</li>
 </ol>
 
-<p>Why and why not might a Poisson process model be suitable here?</p></article></slide>
+<p>Why and why not might a Poisson process model be suitable here?</p>
+
+</article></slide><slide class='segue dark nobackground level1'><hgroup class = 'auto-fadein'><h2>not done in lecture: Chapter 2 Question 31 - Two Ways</h2></hgroup><article  id="not-done-in-lecture-chapter-2-question-31---two-ways">
+
+</article></slide><slide class=''><hgroup><h2>method 1 - alter the rate by the suggested time fraction</h2></hgroup><article  id="method-1---alter-the-rate-by-the-suggested-time-fraction">
+
+<p>&quot;Phone calls are received at a certain residence as a Poisson process with parameter \(\lambda = 2\) per hour.&quot;</p>
+
+<p>&quot;a. If Diane takes a 10-min. shower, what is the probability that the phone rings during that time.&quot;</p>
+
+<p>10 minutes is 1/6 of an hour. So the relevant rate parameter for a Poisson distribution is \(2\cdot 1/6\). Let \(X\) be the number of phone calls received during the shower, so that \(X \sim \text{Poisson}(2/6)\). We want the probability of <em>any</em> phone calls \(P(X&gt;0)\), which is \(1-P(X=0)=1-e^{-2/6}=0.2834687\)</p>
+
+</article></slide><slide class=''><hgroup><h2>method 1 - alter the rate by the suggested time fraction</h2></hgroup><article  id="method-1---alter-the-rate-by-the-suggested-time-fraction-1">
+
+<p>&quot;b. How long can her shower be if she wishes the probability of receiving no phone calls to be at most .5?&quot;</p>
+
+<p>The rate of calls is 2 per hour. We want the fraction, say \(\theta\), of one hour to be such that \(P(X = 0) = 0.5\).</p>
+
+<p>\[\begin{align*}
+\frac{(2\theta)^0e^{-2\theta}}{0!} &amp;= 0.5\\
+e^{-2\theta} &amp;= 0.5\\
+-2\theta &amp;= \log(0.5)\\
+\theta &amp;= -\frac{\log(0.5)}{2} = \frac{\log(2)}{2} = 0.3465736\\
+\end{align*}\]</p>
+
+<p>The shower can be 20.7944154 minutes long.</p>
+
+</article></slide><slide class=''><hgroup><h2>method 2 - Poisson process method</h2></hgroup><article  id="method-2---poisson-process-method">
+
+<p>&quot;a. If Diane takes a 10-min. shower, what is the probability that the phone rings during that time.&quot;</p></article></slide>
 
 
   <slide class="backdrop"></slide>

@@ -42,7 +42,7 @@ Note: $\lambda$ itself is the rate of occurrences per unit time.
 Let $Y\sim\text{Poisson}(\lambda(t-s))$. The above implies more:
 
 $$\lim_{n \to \infty} P(X_n \in A) = P(Y \in A),$$
-for $A \in \mathbb{R}$. So the "distributions" converge. 
+for $A \subset \mathbb{R}$. So the "distributions" converge. 
 
 ## more on the limit result
 
@@ -114,4 +114,36 @@ Customers enter a store at a rate of 1 per minute. Find the probabilities that:
 3. More than one will enter in each of the first two minutes.
 
 Why and why not might a Poisson process model be suitable here?
+
+# not done in lecture: Chapter 2 Question 31 - Two Ways
+
+## method 1 - alter the rate by the suggested time fraction
+
+"Phone calls are received at a certain residence as a Poisson process with parameter $\lambda = 2$ per hour."
+
+"a. If Diane takes a 10-min. shower, what is the probability that the phone rings during that time."
+
+10 minutes is 1/6 of an hour. So the relevant rate parameter for a Poisson distribution is $2\cdot 1/6$. Let $X$ be the number of phone calls received during the shower, so that $X \sim \text{Poisson}(2/6)$. We want the probability of *any* phone calls $P(X>0)$, which is $1-P(X=0)=1-e^{-2/6}=`r 1-exp(-2/6)`$
+
+## method 1 - alter the rate by the suggested time fraction
+
+"b. How long can her shower be if she wishes the probability of receiving no phone calls to be at most .5?"
+
+The rate of calls is 2 per hour. We want the fraction, say $\theta$, of one hour to be such that $P(X = 0) = 0.5$. 
+
+$$\begin{align*}
+\frac{(2\theta)^0e^{-2\theta}}{0!} &= 0.5\\
+e^{-2\theta} &= 0.5\\
+-2\theta &= \log(0.5)\\
+\theta &= -\frac{\log(0.5)}{2} = \frac{\log(2)}{2} = `r log(2)/2`\\
+\end{align*}$$ 
+
+The shower can be `r 60*log(2)/2` minutes long.
+
+## method 2 - Poisson process method
+
+"a. If Diane takes a 10-min. shower, what is the probability that the phone rings during that time."
+
+
+
 
